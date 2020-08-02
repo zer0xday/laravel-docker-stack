@@ -1,3 +1,7 @@
 .idea
 .vscode
 .env
+
+app/*
+logs/*
+data/*
