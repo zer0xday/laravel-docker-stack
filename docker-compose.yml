@@ -23,8 +23,10 @@ services:
     restart: 'always'
     volumes:
       - ./app:/var/www/html
+    links:
+      - database
   database:
-    image: mariadb/mariadb:${MARIADB_VERSION}
+    image: mariadb:${MARIADB_VERSION}
     container_name: '${PROJECT_NAME}-database'
     restart: 'always'
     ports:
@@ -36,7 +38,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:${PMA_VERSION}
-    container_name: '${COMPOSE_PROJECT_NAME}-phpmyadmin'
+    container_name: '${PROJECT_NAME}-phpmyadmin'
     links:
       - database
     environment:
