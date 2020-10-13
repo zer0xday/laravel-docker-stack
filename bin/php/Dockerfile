@@ -39,7 +39,7 @@ RUN set -eux; \
     docker-php-ext-install gd
 
 # Install xdebug
-RUN pecl install xdebug-2.8.0 && \
+RUN pecl install xdebug-2.9.8 && \
     docker-php-ext-enable xdebug
 
 # Instal composer
