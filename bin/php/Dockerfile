@@ -1,4 +1,4 @@
-FROM php:7.4.8-fpm
+FROM php:8.0.0-fpm
 
 # Use non interactive mode to prevent TUI popups
 ENV DEBIAN_FRONTEND noninteractive
@@ -39,7 +39,7 @@ RUN set -eux; \
     docker-php-ext-install gd
 
 # Install xdebug
-RUN pecl install xdebug-2.9.8 && \
+RUN pecl install xdebug-3.0.1 && \
     docker-php-ext-enable xdebug
 
 # Instal composer
